@@ -1,0 +1,22 @@
+{
+    "logLevel": "DEBUG",
+    "database": {
+        "username": "root",
+        "password": "password",
+        "name": "kobolds",
+        "host": "localhost",
+        "port": "3306"
+    },
+    "cache": {
+        "host": "",
+        "port": "6379",
+        "maxIdle": 3,
+        "idleTimeoutSeconds": 240
+    },
+    "host": "localhost",
+    "port": "8002",
+    "cookieDomain": ".localhost.com",
+    "allowedHosts": [
+        "http://dev.localhost.com"
+    ]
+}
