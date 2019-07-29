@@ -10,7 +10,6 @@ type Kobold struct {
 	Stats        Stats        `json:"stats"`
 	HandyNumbers HandyNumbers `json:"handyNumbers"`
 
-	// ArmorHits int `json:"armorHits"`
 	DeathCheques  int             `json:"deathCheques"`
 	Role          string          `json:"role"`
 	Skills        map[string]bool `json:"skills"`
@@ -18,8 +17,8 @@ type Kobold struct {
 	Edges         []Edge  `json:"edges"`
 	Bogies        []Bogie `json:"bogies"`
 	Armor         Armor   `json:"armor"`
-	// RightPaw
-	// WrongPaw
+	Weapon        Weapon  `json:"weapon"`
+	Gear          Gear    `json:"gear"`
 
 	Hits int `json:"hits"`
 	// Outfit?
@@ -85,6 +84,8 @@ func GenerateKobold() (kobold Kobold) {
 	kobold.Edges = []Edge{RandomEdge()}
 
 	kobold.assignRandomArmor()
+	kobold.assignRandomWeapon()
+	kobold.assignRandomGear()
 
 	return kobold
 }

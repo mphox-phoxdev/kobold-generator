@@ -5,8 +5,8 @@ import "github.com/mphox-phoxdev/kobold-generator/utils"
 type Armor struct {
 	Name   string  `json:"name"`
 	Hits   int     `json:"hits"`
-	Edges  []Edge  `json:"edges"`
-	Bogies []Bogie `json:"bogies"`
+	Edges  []Edge  `json:"edges,omitempty"`
+	Bogies []Bogie `json:"bogies,omitempty"`
 }
 
 func (kobold *Kobold) assignRandomArmor() {
@@ -33,28 +33,34 @@ func (kobold *Kobold) assignBasicRandomArmor() {
 			Edges: []Edge{Edge{Name: "Bouncy"}},
 		}
 	case 1:
-		kobold.Armor = Armor{Name: "Small Shield",
+		kobold.Armor = Armor{
+			Name:   "Small Shield",
 			Hits:   4,
 			Bogies: []Bogie{Bogie{Name: "Item"}},
 		}
 	case 2:
-		kobold.Armor = Armor{Name: "Leather Vest",
+		kobold.Armor = Armor{
+			Name: "Leather Vest",
 			Hits: 3,
 		}
 	case 3:
-		kobold.Armor = Armor{Name: "Hoodie",
+		kobold.Armor = Armor{
+			Name: "Hoodie",
 			Hits: 2,
 		}
 	case 4:
-		kobold.Armor = Armor{Name: "Kid's Clothes",
+		kobold.Armor = Armor{
+			Name: "Kid's Clothes",
 			Hits: 2,
 		}
 	case 5:
-		kobold.Armor = Armor{Name: "Socks",
+		kobold.Armor = Armor{
+			Name: "Socks",
 			Hits: 1,
 		}
 	case 6:
-		kobold.Armor = Armor{Name: "Nekkid!",
+		kobold.Armor = Armor{
+			Name: "Nekkid!",
 			Hits: 0,
 		}
 	}
@@ -73,32 +79,38 @@ func (kobold *Kobold) assignDangerousRandomArmor() {
 			Hits: 8,
 		}
 	case 1:
-		kobold.Armor = Armor{Name: "Beer Barrel",
+		kobold.Armor = Armor{
+			Name:   "Beer Barrel",
 			Hits:   10,
 			Bogies: []Bogie{Bogie{Name: "Item"}},
 		}
 	case 2:
-		kobold.Armor = Armor{Name: "Colander Helm",
+		kobold.Armor = Armor{
+			Name:   "Colander Helm",
 			Hits:   8,
 			Bogies: []Bogie{Bogie{Name: "Item"}},
 		}
 	case 3:
-		kobold.Armor = Armor{Name: "Chain Vest",
+		kobold.Armor = Armor{
+			Name:   "Chain Vest",
 			Hits:   8,
 			Bogies: []Bogie{Bogie{Name: "Jangly"}},
 		}
 	case 4:
-		kobold.Armor = Armor{Name: "Leather Jacket",
+		kobold.Armor = Armor{
+			Name:  "Leather Jacket",
 			Hits:  6,
 			Edges: []Edge{Edge{Name: "Fonzie"}},
 		}
 	case 5:
-		kobold.Armor = Armor{Name: "Leather Apron",
+		kobold.Armor = Armor{
+			Name:  "Leather Apron",
 			Hits:  6,
 			Edges: []Edge{Edge{Name: "Backpack"}},
 		}
 	case 6:
-		kobold.Armor = Armor{Name: "Kite Shield",
+		kobold.Armor = Armor{
+			Name: "Kite Shield",
 			Hits: 12,
 			Bogies: []Bogie{
 				Bogie{Name: "Big"},

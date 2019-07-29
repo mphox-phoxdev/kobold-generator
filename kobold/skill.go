@@ -26,6 +26,7 @@ func InitializeSkillMap(db Database) (err error) {
 		err = errors.Trace(err)
 		return
 	}
+	logrus.Debug(idToSkillMap)
 	return err
 }
 
@@ -35,6 +36,7 @@ func InitializeRoleSkillMap(db Database) (err error) {
 		err = errors.Trace(err)
 		return
 	}
+	logrus.Debug(roleSkillMap)
 	return err
 }
 
@@ -44,7 +46,7 @@ func InitializeRandomSkillMap(db Database) (err error) {
 		err = errors.Trace(err)
 		return
 	}
-	logrus.Info(randomSkillMap)
+	logrus.Debug(randomSkillMap)
 	return err
 }
 
