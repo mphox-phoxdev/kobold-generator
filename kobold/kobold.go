@@ -69,7 +69,9 @@ func GenerateKobold() (kobold Kobold) {
 	kobold.Skills = map[string]bool{"cook": true}
 
 	// kobolds with 2 or more cunning get an additional random skill
-	kobold.updateSkills(GetRandomSkill())
+	if kobold.HandyNumbers.Cunning > 2 {
+		kobold.updateSkills(GetRandomSkill())
+	}
 
 	// Randomly assign a role
 	kobold.assignRandomRole()
